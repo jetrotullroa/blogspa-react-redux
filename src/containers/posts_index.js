@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { fetchPosts } from '../actions'
+import { Link } from 'react-router'
 
 
 class PostsIndex extends React.Component {
@@ -24,6 +25,12 @@ class PostsIndex extends React.Component {
   render() {
     return(
       <div>
+        <div className="row valign-wrapper">
+          <h2 className="col s6 left-align valign">All Posts</h2>
+          <span className="col s6 right-align valign">
+            <Link to="new" className="btn btn-primary">New Post</Link>
+          </span>
+        </div>
         <ul className="collection with-header">
           <li className="collection-header"><h4>Recent Posts</h4></li>
           {this.renderPosts()}
