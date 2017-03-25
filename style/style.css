@@ -10,3 +10,7 @@
 .post-form textarea {
   height: 250px;
 }
+
+.has-danger {
+  color: red;
+}
