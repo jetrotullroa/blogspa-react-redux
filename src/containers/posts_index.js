@@ -26,8 +26,8 @@ class PostsIndex extends React.Component {
     return(
       <div>
         <div className="row valign-wrapper">
-          <h2 className="col s6 left-align valign">All Posts</h2>
-          <span className="col s6 right-align valign">
+          <h2 className="col m6 left-align valign">All Posts</h2>
+          <span className="col m6 right-align valign">
             <Link to="new" className="btn btn-primary">New Post</Link>
           </span>
         </div>
