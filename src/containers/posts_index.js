@@ -15,7 +15,7 @@ class PostsIndex extends React.Component {
     return this.props.posts.map((post) => {
       return(
         <li className="collection-item" key={post.id}>
-          <strong>{post.title}</strong>
+          <strong><Link to={`show/${post.id}`}>{post.title}</Link></strong>
           <span className="secondary-content">{post.categories}</span>
         </li>
       )
