@@ -33,3 +33,12 @@ export const fetchPost = (id) => {
     payload: request
   }
 }
+
+export const deletePost = {id} => {
+  const request = axios.delete(`${ROOT_URL}/posts/${id}?key=${API_KEY}`)
+
+  return {
+    type: DELETE_POST,
+    payload: request
+  }
+}
