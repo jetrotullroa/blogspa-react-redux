@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchPost } from '../actions/index'
-import { Link } from 'react-router'
+import { fetchPost, deletePost } from '../actions/index'
+import { Link, browserHistory } from 'react-router'
 
 
 
@@ -9,6 +9,10 @@ class PostsShow extends React.Component {
 
   componentWillMount(id) {
       this.props.fetchPost(this.props.params.id)
+  }
+
+  handleDelete(id) {
+    confirm("Do you really want to delete this Post?") ? this.props.deletePost(this.props.params.id).then(() => { browserHistory.push('/') }) : ''
   }
 
   render() {
@@ -44,6 +48,8 @@ class PostsShow extends React.Component {
                 </div>
                 <div className="card-action">
                   <Link to="/">Back</Link>
+                  <span>&nbsp;</span>
+                  <button className="btn btn-link red" onClick={this.handleDelete.bind(this)}>Delete</button>
                 </div>
               </div>
             </div>
@@ -60,4 +66,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { fetchPost })(PostsShow)
+export default connect(mapStateToProps, { fetchPost, deletePost })(PostsShow)
